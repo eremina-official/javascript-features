@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>this</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="page10.js"></script>
+</head>
+<body>
+  <main>
+    <h1>this</h1>
+
+    <p><code>this</code> is a function's keyword, a reference to a JavaScript <strong>contex object</strong> in which the current code is executing.</p>
+
+    <p>In usual <strong>functions</strong> value of <code>this</code> does not depend on where a function is lexically declared. Value of <code>this</code> is defined at a runtime depending on how the function is called.</p>
+
+    <p><strong>Default binding</strong> of <code>this</code> in a plain function call: <code>this</code> is the global object (or undefined in the strict mode).</p>
+
+    <p>When function is called as an <strong>object's method</strong>: <code>this</code> is set to the object.</p>
+
+    <p>If the object's method is assigned to a new variable, and that variable is used as a reference to call the method, the value of <code>this</code> is set like if the function was called with the default binding (<code>this</code> will be global object or undefined).</p>
+
+    <p>In <strong>arrow functions</strong> <code>this</code> is bound lexically, that means in arrow function the value of <code>this</code> is set and bound to the enclosing lexical environment (means where the function is physically written).</p>
+  </main>
+</body>
+</html>

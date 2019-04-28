@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Deep and Shallow Copy</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="page8.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Deep and Shallow Copy</h1>
+
+    <p><strong>Deep copy</strong> - in the deep copy of object or array all values are copied <i>by value</i>.</p>
+    <p><strong>Shallow copy</strong> - in the shallow copy of object or array some values are copied <i>by reference</i> (this way the values in the copied object still point to the values of the initial object, if these values are changed on the copied object, they are changed on the initial object as well).</p>
+
+    <p>Nested objects and arrays are always copied by reference. Ways to get them copied by value: to copy nested objest manualy or first stringify the object (JSON.stringify) and then parse the string into a new object (JSON.parse).</p>
+  </main>
+</body>
+</html>

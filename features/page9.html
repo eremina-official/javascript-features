@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Composition and Inheritance</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="page9.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Composition and Inheritance</h1>
+  
+    <p>Fundamentally inheritance is a <strong>code reuse mechanism</strong>, a way of different objects to share and reuse code.</p>
+  
+    <h4>Difference between Class and Prototypal inheritance:</h4>
+    <p>In the programming languages that support <strong>classical inheritance</strong> Class is like a blueprint (template) for object creation, a description of the object to create. Classes can inherit from classes creating bound class taxonomies. A new object is usually instantiated via constructor functions with the 'new' keyword.</p>
+    <p>In JavaScript a <strong>prototype</strong> is an object instance, so objects inherit directly from other objects. Objects are usually instantiated via factory functions, object literals, Object.create() and Object.assign() methods.</p>
+  
+    <p><strong>Object.create()</strong> - creates a new object using the object passed as an agrument as a prototype.</p>
+    <p><strong>Object.assign()</strong> - copies properties of one or more source objects to target object and returns target object.</p>
+  
+    <p><strong>Prototype</strong> in JavaScript is: each object has a property called prototype which points to another object from which the initial object can inherit properties and methods. This another object is also called prototype.</p>
+  
+    <h4>In JavaScript prototypal inhertitance can work in few ways:</h4>
+      <ul>
+        <li>Properties and methods can be <strong>copied</strong> from one object to another (usually via Object.assign()). This is different from a prototype delegation in a way that it increases the memory usage, while the properties are copied for every new instance, but not delegated as with prototype delegation.</li>
+        <li><strong>Prototype delegation</strong> - properties and methods can be delegated to prototype. If a method is not found on the object, JavaScript engine looks up for this method on the object's protopype and then further on the prototype chain.</li>
+        <li><strong>Functional inheritance</strong> - via Factory Functions. Factory function is set up to return an object and does not use the 'new' keyword.</li>
+      </ul>
+  
+    <p>With <strong>composition</strong> we first define features (properties and methods) and then can compose objects with these features.</p>
+  </main>
+</body>
+</html>
