@@ -1,3 +1,4 @@
+import * as page14Module from './page14';
 import { toggleClass } from './page14';
 
 describe('toggleClass', () => {
@@ -26,6 +27,24 @@ describe('toggleClass', () => {
     expect(targetP.classList.contains('bg-color-red')).toBe(false);
   }); 
 
+  afterAll(() => {
+    //document.body.innerHTML = '';
+  });
 });
 
 //console.log('after describe', document.body.innerHTML);
+
+
+describe('changeText', () => {
+  beforeAll(() => {
+    document.body.innerHTML = 
+    '<div class="text">' + '</div>';
+  });
+
+  test('changes inner HTML', () => {
+    const text = document.querySelector('.text');
+    page14Module.changeText();
+    expect(text.textContent).toBe('text');
+    expect(text).toMatchSnapshot();
+  });
+});
