@@ -14,18 +14,39 @@ function log() {
   Promise.resolve()
     .then(() => { console.log('secondPromise firstThen') });
 
-  console.log(delay(1000));
-  
-  const laterDate = delay(1000);
+  delay(1000);
+  console.log('after delay');
 
-  while (+new Date() < laterDate) { };
+  function delay(millis) {
+    const date = +new Date();
+    let curDate = null;
 
-  console.log('logFinish');
+    do {
+      curDate = +new Date();
+      console.log(curDate);
+    } while (curDate - date < millis);
 
-  function delay(ms) {
-    const date = +new Date() + ms;
-    return date;
+    console.log('inside delay');
   }
+
+  /*  
+    another implementation of busy wait function
+    console.log(delay(1000));
+    
+    const laterDate = delay(1000);
+
+    while (+new Date() < laterDate) {
+      console.log(laterDate);
+    };
+
+    console.log('logFinish');
+
+    function delay(ms) {
+      const date = +new Date() + ms;
+      return date;
+    }  
+  */
+ 
 }
 
 log();
