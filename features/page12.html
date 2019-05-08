@@ -12,6 +12,30 @@
   <main>
     <h1>Event Loop</h1>
     <p>Open console to view results.</p>
+    <p>In <strong>concurrent systems</strong> computations can be executed <i>concurrently</i> (during overlapping time periods) instead of <i>sequentially</i> (one completing before the next starts).</p>
+    <p><strong>Concurrency model</strong> specifies how the different tasks inside the system are coordinated.</p>
+    <p>JavaScript code runs <strong>single-threaded</strong>.</p>
+    <p>JavaScript is <strong>synchronous</strong> by default.</p>
+    <p>JavaScript runtime (browser or Node.js) provides means for JavaScript to run <strong>asynchronously</strong>.</p>
+    <p>Inside the browser <strong>JavaScript Engine</strong> runs JavaScript code synchronously and single-threaded. It keeps Heap (area where objects are stored) and Call Stack (keeps a track of all execution contexts).</p>
+    <p>Browser provides a set of <strong>APIs</strong> (DOM, ajax, setTimeout) that allow for asynchronous code running. These APIs provide threads which are separate from that thread where the main JS code runs and run all asynchronous tasks.</p>
+    <p>Tasks that run <i>asynchronously</i>: user-defined events, DOM events, ajax requests, setTimeout and setInterval methods, I/O (reading from file system etc).</p>
+    <p>All function calls that should be processed asynchronously are placed it the <strong>Message Queue</strong>. When the Call Stack becomes empty, JS runtime moves the oldest function from the Queue to the Call Stack.</p>
+    <p><strong>Event Loop</strong> is a mechanism which constantly checks if there are tasks in the Message Queue and pushes the oldest task the Call Stack as soon as the Stack is empty.</p>
+
+
+
+    <p><strong>Callback</strong> is a function that is passed as a parameter to a Higher-Order Function. Callbacks in JavaScript can run <i>synchronously</i> (when calling the argument function is performed as a part of normal execution of statements) or <i>asynchronously</i> (when the callback function performs an asynchronous operation).</p>
+    
+
+
+    <p><strong>References:</strong></p>
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop">Concurrency model and Event Loop
+    </a></p>
+    <p><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ">What the heck is the event loop anyway? | Philip Roberts | JSConf EU
+    </a></p>
+    <p><a href="https://flaviocopes.com/javascript-event-loop/">The JavaScript Event Loop
+    </a></p>
   </main>
 </body>
 </html>
