@@ -47,4 +47,26 @@ function smallestInteger(array) {
   return resultInteger;
 }
 
-export { smallestInteger };
+
+function smallestIntegerTwo(array) {
+  let result;
+
+  const filteredArray = array.filter(item => item > 0);
+
+  if (!filteredArray.length) {
+    result = 1;
+    return result;
+  }
+
+  let i = 1;
+  while (i < 1000) {
+    const item = filteredArray.find(item => item === i);
+    if (!item) {
+      result = i;
+      return result;
+    }
+    i++;
+  }
+}
+
+export { smallestInteger, smallestIntegerTwo };
