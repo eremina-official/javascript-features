@@ -1,4 +1,9 @@
-import { getMostFrequentItemWithForEach, getMostFrequentItemWithSort } from './page15.js';
+import { 
+         getMostFrequentItemWithForEach, 
+         getMostFrequentItemWithSort, 
+         getMostFrequentItemWithReduce,
+         getMostFrequentItemWithReduceTwo
+       } from './page15.js';
 
 describe('getMostFrequentItemWithForEach', () => {
   test('returns { item: "a", count: 3 }', () => {
@@ -30,6 +35,40 @@ describe('getMostFrequentItemWithSort', () => {
 
   test('returns { item: "a", count: 3 }', () => {
     const result = getMostFrequentItemWithSort(['a', 'a', 'a']);
+    expect(result).toEqual({ item: 'a', count: 3 });
+  });
+});
+
+describe('getMostFrequentItemWithReduce', () => {
+  test('returns { item: "a", count: 3 }', () => {
+    const result = getMostFrequentItemWithReduce(['a', 'c', 'a', 'a', 'b', '3', '1', '3']);
+    expect(result).toEqual({ item: 'a', count: 3 });
+  });
+
+  test('returns { item: "777", count: 2 }', () => {
+    const result = getMostFrequentItemWithReduce(['777', 'c', 'a', '777', 'b', '3', '1', '33']);
+    expect(result).toEqual({ item: '777', count: 2 });
+  });
+
+  test('returns { item: "a", count: 3 }', () => {
+    const result = getMostFrequentItemWithReduce(['a', 'a', 'a']);
+    expect(result).toEqual({ item: 'a', count: 3 });
+  });
+});
+
+describe('getMostFrequentItemWithReduceTwo', () => {
+  test('returns { item: "a", count: 3 }', () => {
+    const result = getMostFrequentItemWithReduceTwo(['a', 'c', 'a', 'a', 'b', '3', '1', '3']);
+    expect(result).toEqual({ item: 'a', count: 3 });
+  });
+
+  test('returns { item: "777", count: 2 }', () => {
+    const result = getMostFrequentItemWithReduceTwo(['777', 'c', 'a', '777', 'b', '3', '1', '33']);
+    expect(result).toEqual({ item: '777', count: 2 });
+  });
+
+  test('returns { item: "a", count: 3 }', () => {
+    const result = getMostFrequentItemWithReduceTwo(['a', 'a', 'a']);
     expect(result).toEqual({ item: 'a', count: 3 });
   });
 });

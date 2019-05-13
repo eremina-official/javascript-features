@@ -68,4 +68,59 @@ console.log(sortedArray);
 
 }
 
-export { getMostFrequentItemWithForEach, getMostFrequentItemWithSort };
+function getMostFrequentItemWithReduce(array) {
+  const countItemsObj = array.reduce((acc, currentValue) => {
+    if (currentValue in acc) {
+      acc[currentValue]++;
+    } else {
+      acc[currentValue] = 1;
+    }
+    return acc;
+  }, {});
+
+  let result = {item: '', count: 0};
+  for (const [item, count] of Object.entries(countItemsObj)) {
+  if (count > result.count) {
+    result.item = item;
+    result.count = count;
+  }
+  } 
+
+  return result;
+}
+
+function getMostFrequentItemWithReduceTwo(array) {
+  const countItemsObj = array.reduce((acc, currentValue) => {    
+    const uniqueItem = acc.find(value => {
+      return value.item === currentValue;
+    });
+
+    if (uniqueItem) {
+      uniqueItem.count++;
+    } else {
+      acc.push({
+        item: currentValue,
+        count: 1
+      });
+    } 
+
+    return acc;
+  }, []);
+
+  let result = countItemsObj.reduce((acc, currentValue) => {
+    acc = (currentValue.count > acc.count) 
+      ? currentValue 
+      : acc;
+    return acc;
+  }, {item: '', count: 0});
+
+  return result;
+}
+
+
+export { 
+          getMostFrequentItemWithForEach, 
+          getMostFrequentItemWithSort, 
+          getMostFrequentItemWithReduce,
+          getMostFrequentItemWithReduceTwo
+       };
