@@ -1,5 +1,9 @@
 console.log('----- delete duplicates ------')
 
+/* 
+  All the functions only work for arrays containing primitive values.
+  Duplicate objects will not be deleted even if they are equal.
+*/
 function deleteDuplicatesPush(testArray) {
   const resultArray = [];
 
@@ -41,4 +45,14 @@ function deleteDuplicatesSort(testArray) {
   return resultArray;
 }
 
-export { deleteDuplicatesPush, deleteDuplicatesSort };
+function deleteDuplicatesReduce(array) {
+  let result = array.reduce((acc, currentValue) => {
+    if (acc.indexOf(currentValue) === -1) {
+      acc.push(currentValue);
+    }
+    return acc;
+  }, []);
+  return result;
+}
+
+export { deleteDuplicatesPush, deleteDuplicatesSort, deleteDuplicatesReduce };
