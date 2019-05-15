@@ -10,7 +10,10 @@ function getElementSum(array, targetNumber) {
 
   array.forEach((arrayElement, index) => {
     let anotherElementIndex = array.findIndex(item => {
-      if (item + arrayElement === targetNumber) {
+      if (
+        item + arrayElement === targetNumber &&
+        array.indexOf(item) !== array.indexOf(arrayElement)
+      ) {
         return item;
       }
     });
@@ -25,5 +28,29 @@ function getElementSum(array, targetNumber) {
 
   return result;
 }
+
+/* TODO: function should return same pair of indices only once */
+function getElementSumReduce(array, targetNumber) {
+  const result = array.reduce((acc, currentValue, currentValueIndex) => {
+    const anotherElementIndex = array.findIndex(item => {
+      if (
+        item + currentValue === targetNumber &&
+        array.indexOf(item) !== array.indexOf(currentValue)
+      ) {
+        return item;
+      }
+    });
+
+    if (anotherElementIndex !== -1) {
+      acc.push([currentValueIndex, anotherElementIndex]);
+    }
+
+    return acc;
+  }, []);
+
+  return result;
+}
+
 console.log(getElementSum([1, 2, 3], 3));
+console.log(getElementSumReduce([1, 2, 3], 3));
 export { getElementSum };

@@ -12,4 +12,9 @@ describe('getElementsEqualToSum', () => {
     const result = getElementSum([7, 3, 8], 7);
     expect(result).toBe(-1);
   });
+
+  test('does not sum up the same number', () => {
+    const result = getElementSum([3, 2, 3], 4);
+    expect(result).toBe(-1);
+  });
 });
