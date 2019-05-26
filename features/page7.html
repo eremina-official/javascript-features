@@ -25,8 +25,8 @@
     <p><strong>Pure Function</strong> definition:</p>
     <ul>
       <li>It returns the <strong>same result</strong> if given the same arguments</li>
-      <li>It does not rely on any <strong>external variables</strong> (which are declared outside of the function)</li>
-      <li>It does not cause any <strong>side effects</strong> (it does not change any external variables)</li>
+      <li>It does not rely on any <strong>external variables</strong> (which are declared outside of the function), all required variables should be passed to the function as arguments</li>
+      <li>It does not cause any <strong>side effects</strong> (API calls, I/O, mutating shared state, calling impure functions)</li>
       <li>It does not change any of the parameters that get passed to it <strong>by reference</strong> (object and arrays)</li>
     </ul>
   
