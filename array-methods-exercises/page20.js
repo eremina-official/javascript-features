@@ -75,15 +75,13 @@ function iterateArray() {
 
 
 function mapArray(orders) {
-  orders = orders.filter(order => order.status === 'confirmed');
-
-  let concatItems = orders.reduce(function(acc, currentValue) {
-    return [...acc, ...currentValue.details];
-  }, []);
-  
-  //sum up the values with same item.name
-  //change values to item and price objects
-  const result = concatItems
+  const result = orders
+    .filter(order => order.status === 'confirmed')
+    .reduce(function(acc, currentValue) {
+      return [...acc, ...currentValue.details];
+    }, [])  
+    //sum up the values with same item.name
+    //change values to item and price objects
     .map(value => {
       const sumedItem = {};
       sumedItem.item = value.item;
