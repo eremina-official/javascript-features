@@ -80,10 +80,10 @@ function getMostFrequentItemWithReduce(array) {
 
   let result = {item: '', count: 0};
   for (const [item, count] of Object.entries(countItemsObj)) {
-  if (count > result.count) {
-    result.item = item;
-    result.count = count;
-  }
+    if (count > result.count) {
+      result.item = item;
+      result.count = count;
+    }
   } 
 
   return result;
