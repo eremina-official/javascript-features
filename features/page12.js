@@ -23,7 +23,6 @@ function log() {
 
     do {
       curDate = +new Date();
-      console.log(curDate);
     } while (curDate - date < millis);
 
     console.log('inside delay');
