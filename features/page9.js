@@ -1,49 +1,54 @@
-console.log('------- Object.create() --------');
+console.log('------- Object.create() method creates a new object using an existing object as a prototype for the new object --------');
 
 const objectToCopyFrom = { key: 'value', someKey: 4};
-
 const objectCopy = Object.create(objectToCopyFrom);
 
-console.log(objectToCopyFrom);
-console.log(objectCopy);
+console.log('objectToCopyFrom', objectToCopyFrom);
+console.log('objectCopy', objectCopy);
 
+console.log('-- add method to objectCopy --')
 objectCopy.method = () => console.log('objectCopyMethod');
-console.log('add method to objectCopy', objectToCopyFrom);
-console.log(objectCopy);
+console.log('objectToCopyFrom.method', objectToCopyFrom.method);
+console.log('objectCopy.method', objectCopy.method);
 
+console.log('-- Inherited properties can be overwritten --')
 objectCopy.key = 'changedValue';
-console.log('overwrite key on objectCopy', objectToCopyFrom);
-console.log(objectCopy);
+console.log('objectToCopyFrom.key', objectToCopyFrom.key);
+console.log('objectCopy.key', objectCopy.key);
 
+console.log('-- add a property anotherKey to objectToCopyFrom --')
 objectToCopyFrom.anotherKey = 'anotherKey';
-console.log('add a property to objectToCopyFrom', objectToCopyFrom);
-console.log(objectCopy);
+console.log('objectToCopyFrom', objectToCopyFrom.anotherKey);
+console.log('objectCopy', objectCopy.anotherKey);
 
 
-console.log('------- Object.assign() --------');
+console.log('------- Object.assign() method is used to copy of values of enumerable own properties from one or more source objects to a target object. It returns the target object, so the returned object is a reference to the target object --------');
 
-const objectTarget = { key: 'value', anotherKey: 3};
-const objectSouce = {key: 'anotherValue', someKey: 6};
-const objectAssign = Object.assign(objectTarget, objectSouce);
+const objectTarget = { key: 'value', objectTargetKey: 3};
+const objectSource = {key: 'anotherValue', objectSourceKey: 6};
+const objectAssign = Object.assign(objectTarget, objectSource);
 
-console.log(objectTarget);
-console.log(objectSouce);
-console.log(objectAssign);
+console.log('objectTarget', objectTarget);
+console.log('objectSource', objectSource);
+console.log('objectAssign', objectAssign);
 
-objectTarget.method = () => {console.log('objectTargetMethod')};
-console.log('add method to objectTarget', objectTarget);
-console.log(objectSouce);
-console.log(objectAssign);
+console.log('-- add method objectTargetMethod to objectTarget --');
+objectTarget.objectTargetMethod = () => {console.log('objectTargetMethod')};
+console.log('objectTarget', objectTarget);
+console.log('objectSource', objectSource);
+console.log('objectAssign', objectAssign);
 
-objectTarget.key = 'changedValue';
-console.log('overwrtite key on objectTarget', objectTarget);
-console.log(objectSouce);
-console.log(objectAssign);
+console.log('-- add method objectSourceMethod to objectSource --');
+objectSource.objectSourceMethod = () => {console.log('objectSourceMethod')};
+console.log('objectTarget', objectTarget);
+console.log('objectSource', objectSource);
+console.log('objectAssign', objectAssign);
 
-objectSouce.addedKey = '9';
-console.log('add property to objectSource', objectTarget);
-console.log(objectSouce);
-console.log(objectAssign);
+console.log('-- add method objectAssignMethod to objectAssign --');
+objectAssign.objectAssignMethod = () => {console.log('objectAssignMethod')};
+console.log('objectTarget', objectTarget);
+console.log('objectSource', objectSource);
+console.log('objectAssign', objectAssign);
 
 console.log('------- composition --------');
 
