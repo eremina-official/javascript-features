@@ -8,8 +8,13 @@ function checkArray(input) {
   return result;
 }
 
-function arrayToString(array) {
-  return null;
+function arrayToString(array, delimiter) {
+  const result = array.reduce((acc, currentValue) => {
+    acc += delimiter + currentValue;
+    return acc;
+  });
+
+  return result;
 }
 
 export { checkArray, arrayToString };

@@ -25,6 +25,6 @@ describe('checkArray', () => {
 describe('arrayToString', () => {
   test('returns correct string', () => {
     const result = 'World+Wide+Web';
-    expect(arrayToString(['World', 'Wide', 'Web'])).toBe(result);
+    expect(arrayToString(['World', 'Wide', 'Web'], '+')).toBe(result);
   });
 });
