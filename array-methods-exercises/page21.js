@@ -8,6 +8,8 @@ function checkArray(input) {
   return result;
 }
 
+console.log('----- array to string -----')
+
 function arrayToString(array, delimiter) {
   const result = array.reduce((acc, currentValue) => {
     acc += delimiter + currentValue;
@@ -16,5 +18,15 @@ function arrayToString(array, delimiter) {
 
   return result;
 }
+
+function printElements(array) {
+  array.forEach((element, elementIndex) => {
+    console.log(`row ${elementIndex}`);
+    element.forEach(item => {
+      console.log('' + item);
+    });
+  });
+}
+printElements([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]);
 
 export { checkArray, arrayToString };
