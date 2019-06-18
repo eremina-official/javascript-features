@@ -55,4 +55,80 @@ function deleteDuplicatesReduce(array) {
   return result;
 }
 
-export { deleteDuplicatesPush, deleteDuplicatesSort, deleteDuplicatesReduce };
+
+console.log('----- union of two arrays -----');
+
+function unionOfTwoArrays(arrayOne, arrayTwo) {
+  const result = arrayOne.reduce((acc, currentValue) => {
+    let itemInAcc = acc.find(item => {
+      return item === currentValue;
+    });
+
+    if (!itemInAcc) {
+      acc.push(currentValue);
+    }
+
+    return acc;
+  }, arrayTwo);
+
+  return result;
+}
+
+
+console.log('----- difference of two arrays -----');
+
+function differenceOfTwoArrays(arrayOne, arrayTwo) {
+  const resultOne = arrayOne.reduce((acc, currentValue) => {
+    let itemInArrayTwo = arrayTwo.find(item => {
+      return item === currentValue;
+    });
+
+    if (!itemInArrayTwo) {
+      acc = [...acc, currentValue];
+    }
+
+    return acc;
+  }, []);
+
+  const resultTwo = arrayTwo.reduce((acc, currentValue) => {
+    let itemInArrayOne = arrayOne.find(item => {
+      return item === currentValue;
+    });
+
+    if (!itemInArrayOne) {
+      acc = [...acc, currentValue];
+    }
+
+    return acc;
+  }, []);
+
+  const result = [...resultOne, ...resultTwo];
+  return result;
+}
+
+function differenceOfTwoArraysTwo(arrayOne, arrayTwo) {
+  const result = arrayOne.reduce((acc, currentValue) => {
+    let itemInAcc = acc.find(item => {
+      return item === currentValue;
+    });
+
+    if (itemInAcc) {
+      acc = acc.filter(item => item !== currentValue);
+    } else {
+      acc = [...acc, currentValue];
+    }
+
+    return acc;
+  }, arrayTwo);
+
+  return result;
+}
+
+
+export { deleteDuplicatesPush, 
+         deleteDuplicatesSort, 
+         deleteDuplicatesReduce, 
+         unionOfTwoArrays,  
+         differenceOfTwoArrays, 
+         differenceOfTwoArraysTwo
+       };
