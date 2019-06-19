@@ -1,11 +1,4 @@
-console.log('--------------');
-
-/* 
-  Function takes an array as an argument and returns the smallest positive integer value (greater than 0)
-  which is not present in the array. For example, given an array [1, 2, 4] 
-  it returns 3, given an array [1, 2, 3] it returns 4, given an array [-1, -2] it returns 1. 
-  Arrays can have integers from -1000 to 1000. 
-*/
+console.log('----- samllest positive integer -----');
 
 function smallestInteger(array) {
   let sortedArray = [...array];
@@ -15,8 +8,6 @@ function smallestInteger(array) {
     return a - b;
   }
 
-  const maxIntegerInSortedArray = sortedArray[sortedArray.length - 1];
-  
   let resultInteger;
   let testArrayFilteredZero = sortedArray.filter(filterIntegers);
   function filterIntegers(integer) {
