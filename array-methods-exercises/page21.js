@@ -8,7 +8,8 @@ function checkArray(input) {
   return result;
 }
 
-console.log('----- array to string -----')
+
+console.log('----- array to string -----');
 
 function arrayToString(array, delimiter) {
   const result = array.reduce((acc, currentValue) => {
@@ -18,6 +19,9 @@ function arrayToString(array, delimiter) {
 
   return result;
 }
+
+
+console.log('----- print elements -----');
 
 function printElements(array) {
   array.forEach((element, elementIndex) => {

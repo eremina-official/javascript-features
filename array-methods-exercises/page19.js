@@ -50,6 +50,8 @@ console.log(getElementSum([1, 2, 3], 3));
 console.log(getElementSumReduce([1, 2, 3], 3));
 
 
+console.log('----- sum and product -----');
+
 function sumAndProduct(array) {
   const result = array.reduce((acc, currentValue) => {
     acc.sum += currentValue;
@@ -60,6 +62,8 @@ function sumAndProduct(array) {
   return result;
 }
 
+
+console.log('----- sum indices -----');
 
 function sumIndices(arrayOne, arrayTwo) {
   let longestArray;
