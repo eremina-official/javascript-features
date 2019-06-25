@@ -2,7 +2,7 @@ console.log('----- move element from one position to another -----');
 
 function moveElement(array, index, nextIndex) {
   if (index >= array.length) {
-    return 'There is no element with index 6 in the given array.';
+    return `There is no element with index ${index} in the given array.`;
   }
 
   const element = array.splice(index, 1);
