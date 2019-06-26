@@ -115,4 +115,32 @@ function sumIndicesTwo(arrayOne, arrayTwo) {
   return result;
 }
 
-export { getElementSum, sumAndProduct, sumIndices, sumIndicesTwo };
+
+console.log('----- sum elements of the array after mapping each element with a provided function -----');
+
+function sumAfterMapping(array, cb) {
+  const result = array.map(cb)
+    .reduce((acc, currentValue) => {
+      acc += currentValue;
+      return acc;
+    });
+  return result;
+}
+
+//does not apply cb to the first element of the array since it is used as acc in the first run
+function sumAfterMappingTwo(array, cb) {
+  const result = array.reduce((acc, currentValue) => {
+    currentValue = cb(currentValue);
+    acc += currentValue;
+    return acc;
+  });
+  return result;
+}
+
+
+export { getElementSum, 
+         sumAndProduct, 
+         sumIndices, 
+         sumIndicesTwo, 
+         sumAfterMapping, 
+         sumAfterMappingTwo };

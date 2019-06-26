@@ -1,4 +1,9 @@
-import { getElementSum, sumAndProduct, sumIndices, sumIndicesTwo } from './page19';
+import { getElementSum, 
+         sumAndProduct, 
+         sumIndices, 
+         sumIndicesTwo, 
+         sumAfterMapping, 
+         sumAfterMappingTwo } from './page19';
 
 describe('getElementsEqualToSum', () => {
   test('returns [1, 4]', () => {
@@ -49,5 +54,19 @@ describe('sumIndicesTwo', () => {
   test('returns [6, 8, 9, 4]', () => {
     const result = sumIndices([1, 2, 2, 4], [5, 6, 7]);
     expect(result).toEqual([6, 8, 9, 4]);
+  });
+});
+
+describe('sumAfterMapping', () => {
+  test('returns correct result', () => {
+    const result = sumAfterMapping([1, 2, 3], item => item + 1);
+    expect(result).toBe(9);
+  });
+});
+
+describe('sumAfterMappingTwo', () => {
+  test('returns correct result', () => {
+    const result = sumAfterMappingTwo([1, 2, 3], item => item + 1);
+    expect(result).toBe(9);
   });
 });
