@@ -118,9 +118,40 @@ function getMostFrequentItemWithReduceTwo(array) {
 }
 
 
+console.log('----- unique items -----');
+
+function uniqueItems(array) {
+  //forEach, save as current element, remove from array, look in array again if present remove to not unique if not present move to result
+
+  let currentElement;
+  let referenceArray = [...array];
+  let notUniqueElements = [];
+  let result = [];
+
+  array.forEach(element => {
+    const notUniqueElement = notUniqueElements.find(item => item === element);
+
+    if (!notUniqueElement) {
+      currentElement = element;
+      const elementIndex = referenceArray.indexOf(currentElement);
+      referenceArray.splice(elementIndex, 1);
+      
+      if (referenceArray.indexOf(currentElement) === -1) {
+        result.push(currentElement);
+      } else {
+        notUniqueElements.push(currentElement);
+      }
+    }
+  });
+
+  return result;
+}
+
+
 export { 
           getMostFrequentItemWithForEach, 
           getMostFrequentItemWithSort, 
           getMostFrequentItemWithReduce,
-          getMostFrequentItemWithReduceTwo
+          getMostFrequentItemWithReduceTwo,
+          uniqueItems
        };

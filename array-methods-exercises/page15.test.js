@@ -2,7 +2,8 @@ import {
          getMostFrequentItemWithForEach, 
          getMostFrequentItemWithSort, 
          getMostFrequentItemWithReduce,
-         getMostFrequentItemWithReduceTwo
+         getMostFrequentItemWithReduceTwo, 
+         uniqueItems
        } from './page15.js';
 
 describe('getMostFrequentItemWithForEach', () => {
@@ -70,5 +71,14 @@ describe('getMostFrequentItemWithReduceTwo', () => {
   test('returns { item: "a", count: 3 }', () => {
     const result = getMostFrequentItemWithReduceTwo(['a', 'a', 'a']);
     expect(result).toEqual({ item: 'a', count: 3 });
+  });
+});
+
+describe('uniqueItems', () => {
+  test('returns correct result', () => {
+    const result = uniqueItems([7, 'a', 7, 'b', 8, 4, 'b', 'b', 'b', 7, 4]);
+    expect(result).toHaveLength(2);
+    expect(result).toContain(8);
+    expect(result).toContain('a');
   });
 });
