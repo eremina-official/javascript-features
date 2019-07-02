@@ -121,8 +121,6 @@ function getMostFrequentItemWithReduceTwo(array) {
 console.log('----- unique items -----');
 
 function uniqueItems(array) {
-  //forEach, save as current element, remove from array, look in array again if present remove to not unique if not present move to result
-
   let currentElement;
   let referenceArray = [...array];
   let notUniqueElements = [];
@@ -147,11 +145,33 @@ function uniqueItems(array) {
   return result;
 }
 
+function uniqueItemsReduce(array) {
+  const result = array.reduce((acc, currentValue) => {
+    const uniqueItem = acc.find(item => item.item === currentValue);
+
+    if (!uniqueItem) {
+      acc.push({
+        item: currentValue,
+        count: 1
+      });
+    } else {
+      uniqueItem.count += 1;
+    }
+
+    return acc;
+  }, [])
+  .filter(uniqueItem => uniqueItem.count === 1)
+  .map(uniqueItem => uniqueItem.item);
+
+  return result;
+}
+
 
 export { 
           getMostFrequentItemWithForEach, 
           getMostFrequentItemWithSort, 
           getMostFrequentItemWithReduce,
           getMostFrequentItemWithReduceTwo,
-          uniqueItems
+          uniqueItems,
+          uniqueItemsReduce
        };
