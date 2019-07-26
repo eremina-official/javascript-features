@@ -9,3 +9,7 @@ main {
 code {
   background-color: rgba(220,220,220,.5);
 }
+
+ul {
+  line-height: 1.8;
+}
