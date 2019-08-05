@@ -1,4 +1,6 @@
-import { isString, isBlank } from './page25.js';
+import { isString, 
+         isBlank, 
+         parametrizeString } from './page25.js';
 
 
 describe('isString', () => {
@@ -33,5 +35,18 @@ describe('isBlank', () => {
   test('returns true if the string is not blank', () => {
     const result = isBlank('It is a string');
     expect(result).toBe(true);
+  });
+});
+
+
+describe('parametrizeString', () => {
+  test('returns parametrized string', () => {
+    const result = parametrizeString('John Smith from Germany');
+    expect(result).toBe('john-smith-from-germany');
+  });
+
+  test('accounts for multiple spaces', () => {
+    const result = parametrizeString('John   Smith    from Germany');
+    expect(result).toBe('john-smith-from-germany');
   });
 });

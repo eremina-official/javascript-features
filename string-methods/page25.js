@@ -20,4 +20,16 @@ function isBlank(string) {
 }
 
 
-export { isString, isBlank };
+console.log('----- parametrizeString -----');
+
+function parametrizeString(string) {
+  const result = string.toLowerCase()
+    .split(' ')
+    .filter(word => { if (word) { return word } })
+    .join('-');
+    
+  return result;
+}
+
+
+export { isString, isBlank, parametrizeString };
