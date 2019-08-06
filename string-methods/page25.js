@@ -31,5 +31,23 @@ function parametrizeString(string) {
   return result;
 }
 
+console.log('----- capitalizeString -----');
 
-export { isString, isBlank, parametrizeString };
+function capitalizeString(string) {
+  const result = string.split(' ')
+    .map(word => {
+      const firstLetter = word.slice(0, 1).
+        toUpperCase();
+      const restLetters = word.slice(1);
+      return firstLetter.concat(restLetters);
+    })
+    .join(' ');
+
+  return result;
+}
+
+
+export { isString, 
+         isBlank, 
+         parametrizeString, 
+         capitalizeString };

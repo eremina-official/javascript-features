@@ -1,6 +1,7 @@
 import { isString, 
          isBlank, 
-         parametrizeString } from './page25.js';
+         parametrizeString, 
+         capitalizeString } from './page25.js';
 
 
 describe('isString', () => {
@@ -48,5 +49,13 @@ describe('parametrizeString', () => {
   test('accounts for multiple spaces', () => {
     const result = parametrizeString('John   Smith    from Germany');
     expect(result).toBe('john-smith-from-germany');
+  });
+});
+
+
+describe('capitalizeString', () => {
+  test('capitalizes first letter of each word', () => {
+    const result = capitalizeString('Capitalize first letter of each word');
+    expect(result).toBe('Capitalize First Letter Of Each Word');
   });
 });
