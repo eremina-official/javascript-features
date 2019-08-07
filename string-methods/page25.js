@@ -46,8 +46,36 @@ function capitalizeString(string) {
   return result;
 }
 
+console.log('----- makeOrdinalNumber -----');
+
+function makeOrdinalNumber(number) {
+  const str = '' + number;
+
+  if (
+    str.endsWith(11) ||
+    str.endsWith(12) ||
+    str.endsWith(13)
+  ) {
+    return `${number}th`;
+  }
+
+  switch (str.slice(-1)) {
+    case '1':
+      return `${str}st`;
+    case '2':
+      return `${str}nd`;
+    case '3':
+      return `${str}rd`;  
+    case '4':
+      return `${str}th`;
+    default:
+      return `${str}th`;
+  }
+}
+
 
 export { isString, 
          isBlank, 
          parametrizeString, 
-         capitalizeString };
+         capitalizeString, 
+         makeOrdinalNumber };

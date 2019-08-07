@@ -1,7 +1,8 @@
 import { isString, 
          isBlank, 
          parametrizeString, 
-         capitalizeString } from './page25.js';
+         capitalizeString, 
+         makeOrdinalNumber } from './page25.js';
 
 
 describe('isString', () => {
@@ -57,5 +58,53 @@ describe('capitalizeString', () => {
   test('capitalizes first letter of each word', () => {
     const result = capitalizeString('Capitalize first letter of each word');
     expect(result).toBe('Capitalize First Letter Of Each Word');
+  });
+});
+
+
+describe('makeOrdinalNumber', () => {
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(1);
+    expect(result).toBe('1st');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(2);
+    expect(result).toBe('2nd');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(3);
+    expect(result).toBe('3rd');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(4);
+    expect(result).toBe('4th');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(10);
+    expect(result).toBe('10th');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(51);
+    expect(result).toBe('51st');
+  });
+
+  test('makes number ordinal', () => {
+    const result = makeOrdinalNumber(101);
+    expect(result).toBe('101st');
+  });
+
+  test('accounts for exeptions', () => {
+    const result = makeOrdinalNumber(1011);
+    expect(result).toBe('1011th');
+  });
+
+  test('accounts for exeptions', () => {
+    const result = makeOrdinalNumber(11);
+    expect(result).toBe('11th');
   });
 });
