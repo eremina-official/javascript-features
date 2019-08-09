@@ -56,7 +56,7 @@ function makeOrdinalNumber(number) {
     str.endsWith(12) ||
     str.endsWith(13)
   ) {
-    return `${number}th`;
+    return `${str}th`;
   }
 
   switch (str.slice(-1)) {
@@ -66,8 +66,6 @@ function makeOrdinalNumber(number) {
       return `${str}nd`;
     case '3':
       return `${str}rd`;  
-    case '4':
-      return `${str}th`;
     default:
       return `${str}th`;
   }
