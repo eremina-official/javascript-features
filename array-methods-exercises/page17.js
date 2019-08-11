@@ -3,6 +3,11 @@ console.log('----- delete duplicates ------')
 /* 
   All the functions only work for arrays containing primitive values.
   Duplicate objects will not be deleted even if they are equal.
+
+  Other ways to remove duplicates (as described in https://www.youtube.com/watch?v=itrAyrGRuwQ);
+  - turn array to set
+  - lodash uniq utility
+  - variation with function which takes an array and comparison function
 */
 function deleteDuplicatesPush(testArray) {
   const resultArray = [];
@@ -52,6 +57,31 @@ function deleteDuplicatesReduce(array) {
     }
     return acc;
   }, []);
+  return result;
+}
+
+/* Methods that work for array of objects. */
+
+/**
+ * @param {array} array - array of duplicate values
+ * @param {function} getIdentifier - a function that returns a value which should be used as a unique identifier
+ * for duplicate values comparison
+ */
+function deleteDuplicatesObject(array, getIdentifier) {
+  const uniqueIdentifiers = [];
+
+  const result = array.filter(value => {
+    const identifier = JSON.stringify(getIdentifier(value));
+
+    if (uniqueIdentifiers[identifier]) {
+      return false;
+    }
+
+    uniqueIdentifiers[identifier] = true;
+    //JSON.parse(value);
+    return true;
+  });
+
   return result;
 }
 
@@ -130,5 +160,6 @@ export { deleteDuplicatesPush,
          deleteDuplicatesReduce, 
          unionOfTwoArrays,  
          differenceOfTwoArrays, 
-         differenceOfTwoArraysTwo
+         differenceOfTwoArraysTwo,
+         deleteDuplicatesObject
        };

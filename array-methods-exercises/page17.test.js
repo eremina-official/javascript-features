@@ -3,7 +3,8 @@ import { deleteDuplicatesPush,
          deleteDuplicatesReduce,
          unionOfTwoArrays, 
          differenceOfTwoArrays, 
-         differenceOfTwoArraysTwo } from './page17';
+         differenceOfTwoArraysTwo,
+         deleteDuplicatesObject } from './page17';
 
 describe('deleteDuplicatesPush', () => {
   test('deletes numbers', () => {
@@ -38,6 +39,52 @@ describe('deleteDuplicatesReduce', () => {
     expect(resultArray).toContain(4);
     expect(resultArray).toContain(6);
     expect(resultArray).toContain(8);
+  });
+});
+
+describe('deleteDuplicatesObject', () => {
+  test('deletes equal objects', () => {
+    const testArray = [{c: 3}, {a: 1}, {b: 2}, {d: 4}, {a: 1}, {c: 3}, {a: 1}, {b: 2}];
+    const getIdentifier = value => value;
+    const result = deleteDuplicatesObject(testArray, getIdentifier);
+    expect(result).toHaveLength(4);
+    expect(result).toContainEqual({a: 1});
+    expect(result).toContainEqual({b: 2});
+    expect(result).toContainEqual({c: 3});
+    expect(result).toContainEqual({d: 4});
+  });
+
+  test('deletes objects with selected equal fields', () => {
+    const testArray = [
+      {id: 3, c: 3}, 
+      {id: 1, a: 1}, 
+      {id: 1, b: 2}, 
+      {id: 2, d: 4}, 
+      {id: 1, a: 1}, 
+      {id: 2, c: 3}, 
+      {id: 1, a: 1}, 
+      {id: 1, b: 2}
+    ];
+    const getIdentifier = value => value.id;
+    const result = deleteDuplicatesObject(testArray, getIdentifier);
+    expect(result).toHaveLength(3);
+    expect(result).toContainEqual({id: 3, c: 3});
+    expect(result).toContainEqual({id: 1, a: 1});
+    expect(result).toContainEqual({id: 2, d: 4});
+  });
+});
+
+
+describe('equalityTest', () => {
+  test('test array', () => {
+    const arrayone = [1, 2, 3];
+    const arraytwo = [2, 1, 3];
+    expect(arrayone).toEqual(arraytwo);
+  });
+  test('test object', () => {
+    const objectone = {a: 1, b: 2};
+    const objecttwo = {b: 2, a: 1};
+    expect(objectone).toEqual(objecttwo);
   });
 });
 
