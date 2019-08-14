@@ -92,21 +92,16 @@ describe('equalityTest', () => {
 describe('unionOfTwoArrays', () => {
   test('returns correct result', () => {
     const result = unionOfTwoArrays([1, 2, 3], [7, 3, 6, 2]);
-    expect(result).toHaveLength(5);
-    expect(result).toContain(1);
+    expect(result).toHaveLength(2);
     expect(result).toContain(2);
     expect(result).toContain(3);
-    expect(result).toContain(6);
-    expect(result).toContain(7);
   });
 
   test('returns correct result', () => {
-    const result = unionOfTwoArrays([7, 3, 6, 2], [1, 3, 2]);
-    expect(result).toHaveLength(5);
-    expect(result).toContain(1);
+    const result = unionOfTwoArrays([7, 3, 6, 2, 5], [1, 3, 2, 7]);
+    expect(result).toHaveLength(3);
     expect(result).toContain(2);
     expect(result).toContain(3);
-    expect(result).toContain(6);
     expect(result).toContain(7);
   });
 });

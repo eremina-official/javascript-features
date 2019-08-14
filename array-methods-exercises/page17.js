@@ -63,6 +63,9 @@ function deleteDuplicatesReduce(array) {
 /* Methods that work for array of objects. */
 
 /**
+ * Note that objects must have keys sorted in the same order (since JSON.stringify converts an object 
+ * to a JSON string).
+ * 
  * @param {array} array - array of duplicate values
  * @param {function} getIdentifier - a function that returns a value which should be used as a unique identifier
  * for duplicate values comparison
@@ -78,7 +81,6 @@ function deleteDuplicatesObject(array, getIdentifier) {
     }
 
     uniqueIdentifiers[identifier] = true;
-    //JSON.parse(value);
     return true;
   });
 
@@ -90,16 +92,14 @@ console.log('----- union of two arrays -----');
 
 function unionOfTwoArrays(arrayOne, arrayTwo) {
   const result = arrayOne.reduce((acc, currentValue) => {
-    let itemInAcc = acc.find(item => {
-      return item === currentValue;
-    });
+    let itemInArrayTwo = arrayTwo.find(item => item === currentValue);
 
-    if (!itemInAcc) {
+    if (itemInArrayTwo) {
       acc.push(currentValue);
     }
 
     return acc;
-  }, arrayTwo);
+  }, []);
 
   return result;
 }
