@@ -25,7 +25,8 @@ testFunction2();
 console.log('------- variable scoping -------');
 
 /* 
-  let and const are block-scoped variables, that they are not hoisted like var.
+  let and const are block-scoped variables, than means they can be accessed only inside the block.
+  let and const are not hoisted like var.
   When a variable is declared with let, it can be reassigned.
   When a variable is declared with const, it can not be reassigned.
   When an object is declared with const, it can not be reassigned, but the properties 
