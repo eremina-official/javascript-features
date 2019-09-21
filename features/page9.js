@@ -25,7 +25,7 @@ console.log('objectCopy', objectCopy.anotherKey);
 console.log('------- Object.assign() method is used to copy of values of enumerable own properties from one or more source objects to a target object. It returns the target object, so the returned object is a reference to the target object --------');
 
 const objectTarget = { key: 'value', objectTargetKey: 3};
-const objectSource = {key: 'anotherValue', objectSourceKey: 6};
+const objectSource = {key: [], objectSourceKey: 6};
 const objectAssign = Object.assign(objectTarget, objectSource);
 
 console.log('objectTarget', objectTarget);
@@ -44,8 +44,8 @@ console.log('objectTarget', objectTarget);
 console.log('objectSource', objectSource);
 console.log('objectAssign', objectAssign);
 
-console.log('-- add method objectAssignMethod to objectAssign --');
-objectAssign.objectAssignMethod = () => {console.log('objectAssignMethod')};
+console.log('-- change a property with a non-primitive value on objectSource --');
+objectSource.key = [1, 2];
 console.log('objectTarget', objectTarget);
 console.log('objectSource', objectSource);
 console.log('objectAssign', objectAssign);

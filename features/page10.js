@@ -59,9 +59,7 @@ let testF1 = function() {
 };
 testF1();
 
-let testF2 = function() {
-  console.log(this);
-};
+let testF2 = () => { console.log(this) };
 testF2();
 
 console.log(this);
