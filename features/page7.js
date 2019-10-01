@@ -14,7 +14,7 @@ console.log('----- reduce -----');
 
 const emptyArray = [[1], [], []];
 
-const reducedArray = emptyArray.reduce((acc, currentValue, currentValueIndex) => {
+const reducedEmptyArray = emptyArray.reduce((acc, currentValue, currentValueIndex) => {
   if (currentValue) {
     acc[currentValueIndex] = [1];
   }
@@ -22,4 +22,21 @@ const reducedArray = emptyArray.reduce((acc, currentValue, currentValueIndex) =>
 }, emptyArray);
 
 console.log('emptyArray', emptyArray);
-console.log('reducedArary', reducedArray);
+console.log('reducedEmptyArary', reducedEmptyArray);
+
+
+console.log('----- reduce example, check if the array remains unmodified -----');
+
+const initialArray = [[1], [], []];
+
+const reducedInitialArray = initialArray.reduce((acc, currentValue, currentIndex) => {
+  if (currentIndex === 1) {
+    currentValue = [2];
+    acc.push(currentValue);
+  }
+  return acc;
+}, []);
+
+console.log('initialArray', initialArray);
+console.log('reducedInitalArray', reducedInitialArray);
+
