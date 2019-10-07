@@ -40,3 +40,32 @@ const reducedInitialArray = initialArray.reduce((acc, currentValue, currentIndex
 console.log('initialArray', initialArray);
 console.log('reducedInitalArray', reducedInitialArray);
 
+
+console.log('----- map example, modify array inside map -----');
+
+const bArray = [[1], [], []];
+const mappedBArray = bArray.map((element, elementIndex) => {
+  if (elementIndex === 1) {
+    return bArray[elementIndex + 1] = [0];
+  }
+  return element;
+});
+
+console.log('bArray', bArray);
+console.log('mappedBArray', mappedBArray);
+
+
+console.log('----- reduce example, modify accumulator inside reduce -----');
+
+const cArray = [[1], 'b', []];
+const reducedCArray = cArray.reduce((acc, currentValue, currentIndex) => {
+  if (currentIndex === 1 && currentValue === 'b') {
+    acc = 'b';
+  }
+  return acc;
+}, []);
+
+console.log('cArray', cArray);
+console.log('reducedCArray', reducedCArray);
+
+
