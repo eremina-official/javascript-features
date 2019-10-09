@@ -1,3 +1,5 @@
+console.log('----- pipe implementation -----');
+
 const add = (x) => x + 'b';
 const concat = (x) => (acc) => acc + x;
 
@@ -10,7 +12,8 @@ console.log('addConcat', addConcat);
 const concatAdd = pipe(concat('c'), add)('a');
 console.log('concatAdd', concatAdd);
 
-console.log('----- reduce -----');
+
+console.log('----- reduce example, give same array as accumulator -----');
 
 const emptyArray = [[1], [], []];
 
