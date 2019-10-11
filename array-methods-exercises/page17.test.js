@@ -1,7 +1,8 @@
 import { deleteDuplicatesPush, 
          deleteDuplicatesSort, 
          deleteDuplicatesReduce,
-         unionOfTwoArrays, 
+         unionOfTwoArrays,
+         unionOfTwoArraysTwo,
          differenceOfTwoArrays, 
          differenceOfTwoArraysTwo,
          deleteDuplicatesObject } from './page17';
@@ -99,6 +100,23 @@ describe('unionOfTwoArrays', () => {
 
   test('returns correct result', () => {
     const result = unionOfTwoArrays([7, 3, 6, 2, 5], [1, 3, 2, 7]);
+    expect(result).toHaveLength(3);
+    expect(result).toContain(2);
+    expect(result).toContain(3);
+    expect(result).toContain(7);
+  });
+});
+
+describe('unionOfTwoArraysTwo', () => {
+  test('returns correct result', () => {
+    const result = unionOfTwoArraysTwo([1, 2, 3], [7, 3, 6, 2]);
+    expect(result).toHaveLength(2);
+    expect(result).toContain(2);
+    expect(result).toContain(3);
+  });
+
+  test('returns correct result', () => {
+    const result = unionOfTwoArraysTwo([7, 3, 6, 2, 5], [1, 3, 2, 7]);
     expect(result).toHaveLength(3);
     expect(result).toContain(2);
     expect(result).toContain(3);

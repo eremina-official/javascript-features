@@ -104,6 +104,10 @@ function unionOfTwoArrays(arrayOne, arrayTwo) {
   return result;
 }
 
+function unionOfTwoArraysTwo(arrayOne, arrayTwo) {
+  return arrayOne.filter(item => arrayTwo.includes(item));
+}
+
 
 console.log('----- difference of two arrays -----');
 
@@ -158,7 +162,8 @@ function differenceOfTwoArraysTwo(arrayOne, arrayTwo) {
 export { deleteDuplicatesPush, 
          deleteDuplicatesSort, 
          deleteDuplicatesReduce, 
-         unionOfTwoArrays,  
+         unionOfTwoArrays,
+         unionOfTwoArraysTwo,
          differenceOfTwoArrays, 
          differenceOfTwoArraysTwo,
          deleteDuplicatesObject
