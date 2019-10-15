@@ -158,6 +158,14 @@ function differenceOfTwoArraysTwo(arrayOne, arrayTwo) {
   return result;
 }
 
+function differenceOfTwoArraysThree(arrayOne, arrayTwo) {
+  const result = [
+    ...arrayOne.filter(item => !arrayTwo.includes(item)), 
+    ...arrayTwo.filter(item => !arrayOne.includes(item))
+  ];
+  return result;
+}
+
 
 export { deleteDuplicatesPush, 
          deleteDuplicatesSort, 
@@ -166,5 +174,6 @@ export { deleteDuplicatesPush,
          unionOfTwoArraysTwo,
          differenceOfTwoArrays, 
          differenceOfTwoArraysTwo,
+         differenceOfTwoArraysThree,
          deleteDuplicatesObject
        };

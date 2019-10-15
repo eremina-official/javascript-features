@@ -5,6 +5,7 @@ import { deleteDuplicatesPush,
          unionOfTwoArraysTwo,
          differenceOfTwoArrays, 
          differenceOfTwoArraysTwo,
+         differenceOfTwoArraysThree,
          deleteDuplicatesObject } from './page17';
 
 describe('deleteDuplicatesPush', () => {
@@ -160,3 +161,24 @@ describe('differenceOfTwoArraysTwo', () => {
     expect(result).toContain(6);
   });
 });
+
+describe('differenceOfTwoArraysThree', () => {
+  test('returns correct result', () => {
+    const result = differenceOfTwoArraysThree([1, 2, 4], [1, 6, 5, 2]);
+    expect(result).toHaveLength(3);
+    expect(result).toContain(4);
+    expect(result).toContain(5);
+    expect(result).toContain(6);
+  });
+
+  test('returns correct result', () => {
+    const result = differenceOfTwoArraysThree([1, 6, 5, 2], [2, 4, 1]);
+    expect(result).toHaveLength(3);
+    expect(result).toContain(4);
+    expect(result).toContain(5);
+    expect(result).toContain(6);
+  });
+});
+
+
+
