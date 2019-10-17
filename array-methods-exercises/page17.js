@@ -142,9 +142,7 @@ function differenceOfTwoArrays(arrayOne, arrayTwo) {
 
 function differenceOfTwoArraysTwo(arrayOne, arrayTwo) {
   const result = arrayOne.reduce((acc, currentValue) => {
-    let itemInAcc = acc.find(item => {
-      return item === currentValue;
-    });
+    const itemInAcc = acc.find(item => item === currentValue);
 
     if (itemInAcc) {
       acc = acc.filter(item => item !== currentValue);
