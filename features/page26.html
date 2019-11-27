@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Var, let and const</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <script src="page26.js"></script>
+</head>
+<body>
+  <main>
+    <h1>Var, let and const</h1>
+
+    <p><strong>Var</strong></p>
+    <ul>
+      <li><strong>Scope</strong>: if <code>var</code> is defined inside a function then it is limited to the function scope, it <code>var</code> is defined outside any function then it is in the global scope.</li>
+      <li>Can be <strong>reassigned</strong> and mutated within its scope.</li>
+      <li>Is <strong>hoisted</strong> to the top of its scope and initialised with value of <strong>undefined</strong>.</li>
+    </ul>
+
+    <p><strong>Let</strong></p>
+    <ul>
+      <li><strong>Scope</strong>: block-scoped (the scope is limited to a block defined by curly braces).</li>
+      <li>Can be reassigned and mutated within its scope.</li>
+      <li>Is hoisted but not initialized with any value (if <code>let</code> is used before declaration it gives a <code>Reference Error</code>).</li>
+    </ul>
+
+    <p><strong>Const</strong></p>
+    <ul>
+      <li><strong>Scope</strong>: block-scoped (the scope is limited to a block defined by curly braces).</li>
+      <li>Can <strong>not</strong> be reassigned, but if an object is defined with const then it can be mutated.</li>
+      <li>Is hoisted but not initialized with any value (if <code>const</code> is used before declaration it gives a <code>Reference Error</code>).</li>
+    </ul>
+    <p></p>
+  </main>
+</body>
+</html>
