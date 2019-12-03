@@ -1,4 +1,4 @@
-console.log('----- samllest positive integer -----');
+console.log('----- smallest positive integer -----');
 
 function smallestInteger(array) {
   let sortedArray = [...array];
