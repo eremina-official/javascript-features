@@ -12,27 +12,30 @@
   <main>
     <h1>Var, let and const</h1>
 
-    <p><strong>Var</strong></p>
+    <p><strong>var</strong></p>
     <ul>
-      <li><strong>Scope</strong>: if <code>var</code> is defined inside a function then it is limited to the function scope, it <code>var</code> is defined outside any function then it is in the global scope.</li>
+      <li><strong>Scope</strong>: if <code>var</code> is defined inside a function then it is limited to the function scope, if <code>var</code> is defined outside any function then it is in the global scope.</li>
       <li>Can be <strong>reassigned</strong> and mutated within its scope.</li>
       <li>Is <strong>hoisted</strong> to the top of its scope and initialised with value of <strong>undefined</strong>.</li>
     </ul>
 
-    <p><strong>Let</strong></p>
+    <p><strong>let</strong></p>
     <ul>
       <li><strong>Scope</strong>: block-scoped (the scope is limited to a block defined by curly braces).</li>
       <li>Can be reassigned and mutated within its scope.</li>
-      <li>Is hoisted but not initialized with any value (if <code>let</code> is used before declaration it gives a <code>Reference Error</code>).</li>
+      <li>Is <strong>hoisted</strong> but <strong>not initialized</strong> with any value (if <code>let</code> is used before declaration it gives a <code>Reference Error</code>).</li>
     </ul>
 
-    <p><strong>Const</strong></p>
+    <p><strong>const</strong></p>
     <ul>
       <li><strong>Scope</strong>: block-scoped (the scope is limited to a block defined by curly braces).</li>
-      <li>Can <strong>not</strong> be reassigned, but if an object is defined with const then it can be mutated.</li>
-      <li>Is hoisted but not initialized with any value (if <code>const</code> is used before declaration it gives a <code>Reference Error</code>).</li>
+      <li>Can <strong>not</strong> be reassigned, but if an object is defined with <code>const</code> then it can be mutated.</li>
+      <li>Is <strong>hoisted</strong> but <strong>not initialized</strong> with any value (if <code>const</code> is used before declaration it gives a <code>Reference Error</code>).</li>
     </ul>
-    <p></p>
+    <p><strong>References:</strong></p>
+    <ul>
+      <li><a href="https://dev.to/sarah_chima/var-let-and-const--whats-the-difference-69e">Var, let and const- what's the difference?</a></li>
+    </ul>
   </main>
 </body>
 </html>
