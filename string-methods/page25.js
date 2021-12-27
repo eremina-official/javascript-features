@@ -1,12 +1,16 @@
 console.log('----- isString -----');
 
-function isString(input) {
-  const result = (typeof input === 'string') 
-    ? true
-    : false;
+// 2019 verstion
+// function isString(input) {
+//   const result = (typeof input === 'string') 
+//     ? true
+//     : false;
 
-  return result;
-}
+//   return result;
+// }
+
+// 2021 verstion
+const isString = (value) => typeof value === 'string';
 
 
 console.log('----- isBlank -----');
