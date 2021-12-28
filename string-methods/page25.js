@@ -1,6 +1,6 @@
 console.log('----- isString -----');
 
-// 2019 verstion
+// 2019 version
 // function isString(input) {
 //   const result = (typeof input === 'string') 
 //     ? true
@@ -9,7 +9,7 @@ console.log('----- isString -----');
 //   return result;
 // }
 
-// 2021 verstion
+// 2021 version
 const isString = (value) => typeof value === 'string';
 
 
@@ -37,13 +37,26 @@ function parametrizeString(string) {
 
 console.log('----- capitalizeString -----');
 
-function capitalizeString(string) {
-  const result = string.split(' ')
-    .map(word => {
-      const firstLetter = word.slice(0, 1).
-        toUpperCase();
-      const restLetters = word.slice(1);
-      return firstLetter.concat(restLetters);
+// 2019 version
+// function capitalizeString(string) {
+//   const result = string.split(' ')
+//     .map(word => {
+//       const firstLetter = word.slice(0, 1).
+//         toUpperCase();
+//       const restLetters = word.slice(1);
+//       return firstLetter.concat(restLetters);
+//     })
+//     .join(' ');
+
+//   return result;
+// }
+
+// 2021 version
+const capitalizeString = (string) => string.split(' ')
+    .map((word) => {
+      const arrayFromWord = word.split('');
+      arrayFromWord[0] = arrayFromWord[0].toUpperCase();
+      return arrayFromWord.join('');
     })
     .join(' ');
 
