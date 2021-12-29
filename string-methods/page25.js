@@ -15,14 +15,17 @@ const isString = (value) => typeof value === 'string';
 
 console.log('----- isBlank -----');
 
-function isBlank(string) {
-  const result = (!string.charCodeAt(0))
-    ? false
-    : true;
+// 2019 version
+// function isBlank(string) {
+//   const result = (!string.charCodeAt(0))
+//     ? false
+//     : true;
 
-  return result;
-}
+//   return result;
+// }
 
+// 2021 version
+const isBlank = (string) => !!string;
 
 console.log('----- parametrizeString -----');
 
