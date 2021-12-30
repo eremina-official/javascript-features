@@ -21,14 +21,17 @@ console.log(shuffleArray([1, 2, 3, 4, 5, 6, 7, 8]));
 
 console.log('----- retrieve value of a given data type -----');
 
-function retrieveValues(array, dataType) {
-  const result = array.filter(item => {
-    //console.log(typeof item);
-    return (typeof item === dataType) ? true : false;
-  });
-  return result;
-}
+// 2019 version
+// function retrieveValues(array, dataType) {
+//   const result = array.filter(item => {
+//     return (typeof item === dataType) ? true : false;
+//   });
+//   return result;
+// }
 //console.log(retrieveValues(['NaN', 1, [], {}, () => {}, null, NaN], 'number'));
+
+// 2021 version
+const retrieveValues = (array, dataType) => array.filter(item => typeof item === dataType);
 
 
 console.log('----- get nth largest element -----');
