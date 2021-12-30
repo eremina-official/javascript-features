@@ -11,14 +11,18 @@ function checkArray(input) {
 
 console.log('----- array to string -----');
 
-function arrayToString(array, delimiter) {
-  const result = array.reduce((acc, currentValue) => {
-    acc += delimiter + currentValue;
-    return acc;
-  });
+// 2019 version
+// function arrayToString(array, delimiter) {
+//   const result = array.reduce((acc, currentValue) => {
+//     acc += delimiter + currentValue;
+//     return acc;
+//   });
 
-  return result;
-}
+//   return result;
+// }
+
+// 2021 version
+const arrayToString = (array, delimiter) => array.join(delimiter);
 
 
 console.log('----- print elements -----');
