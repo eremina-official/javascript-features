@@ -1,4 +1,4 @@
-import { moveElement, generateArray, generateArrayRecursion } from './page22';
+import { moveElement, generateArray, generateArrayRecursion, generateArrayV2 } from './page22';
 
 
 describe('moveElement', () => {
@@ -35,5 +35,27 @@ describe('generateArrayRecursion', () => {
   test('returns correct result', () => {
     const result = generateArrayRecursion(3, -2);
     expect(result).toEqual([3, 2, 1, 0, -1, -2]);
+  });
+});
+
+describe('generateArrayV2', () => {
+  test('returns correct result', () => {
+    const result = generateArrayV2(3, 8);
+    expect(result).toEqual([3, 4, 5, 6, 7, 8]);
+  });
+
+  test('returns correct result', () => {
+    const result = generateArrayV2(3, -2);
+    expect(result).toEqual([3, 2, 1, 0, -1, -2]);
+  });
+
+  test('returns correct result', () => {
+    const result = generateArrayV2(-3, 2);
+    expect(result).toEqual([-3, -2, -1, 0, 1, 2]);
+  });
+
+  test('returns correct result', () => {
+    const result = generateArrayV2(-3, -2);
+    expect(result).toEqual([-3, -2]);
   });
 });

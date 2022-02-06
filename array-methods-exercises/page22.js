@@ -52,5 +52,25 @@ function generateArrayRecursion(integerOne, integerTwo) {
   }
 }
 
+// 2022 version
+const generateArrayV2 = (integerOne, integerTwo) => {
+  const integersHaveSameSign = (integerOne > 0) === (integerTwo > 0);
+  const absIntOne = Math.abs(integerOne);
+  const absIntTwo = Math.abs(integerTwo);
+  let arrayLength;
 
-export { moveElement, generateArray, generateArrayRecursion };
+  if (integersHaveSameSign) {
+    arrayLength = Math.max(absIntOne, absIntTwo) - Math.min(absIntOne, absIntTwo) + 1;
+  }
+
+  if (!integersHaveSameSign) {
+    arrayLength = absIntOne + absIntTwo + 1;
+  }
+
+  return Array(arrayLength).fill(integerOne)
+    .map((item, index) => integerOne < integerTwo ? item + index : item - index);
+}
+
+
+
+export { moveElement, generateArray, generateArrayRecursion, generateArrayV2 };
