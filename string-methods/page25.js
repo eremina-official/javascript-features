@@ -32,7 +32,7 @@ console.log('----- parametrizeString -----');
 function parametrizeString(string) {
   const result = string.toLowerCase()
     .split(' ')
-    .filter(word => { if (word) { return word } })
+    .filter(word => word)
     .join('-');
     
   return result;
@@ -55,16 +55,18 @@ console.log('----- capitalizeString -----');
 // }
 
 // 2021 version
-const capitalizeString = (string) => string.split(' ')
-    .map((word) => {
-      const arrayFromWord = word.split('');
-      arrayFromWord[0] = arrayFromWord[0].toUpperCase();
-      return arrayFromWord.join('');
-    })
-    .join(' ');
+// const capitalizeString = (string) => string.split(' ')
+//     .map((word) => {
+//       const arrayFromWord = word.split('');
+//       arrayFromWord[0] = arrayFromWord[0].toUpperCase();
+//       return arrayFromWord.join('');
+//     })
+//     .join(' ');
 
-  return result;
-}
+// 2022 version
+const capitalizeString = (string) => string.split(' ')
+    .map((word) => word[0].toUpperCase() + word.slice(1))
+    .join(' ');
 
 console.log('----- makeOrdinalNumber -----');
 
